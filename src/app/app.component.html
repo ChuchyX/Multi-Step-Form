@@ -80,8 +80,82 @@
         <div class="form">
           <h1 class="step-title">Select Your Plan</h1>
           <p class="pstep-title">You have the option of monthly or yearly billing</p>
+          <div class="container-plans" (click)="Arcade()">
+            <div class="plan" [class.plan-active]="arcade">
+              <img src="../assets/images/icon-arcade.svg" alt="icon Arcade" class="icon">
+              <div class="plan-description">
+                <h5 class="hplan">Arcade</h5>
+                <p class="pplan">$9/mo</p>
+                <p class="pfree" *ngIf="!monthly">2 months free</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="container-plans mt-2" (click)="Advanced()">
+            <div class="plan" [class.plan-active]="advanced">
+              <img src="../assets/images/icon-advanced.svg" alt="icon Advanced" class="icon">
+              <div class="plan-description">
+                <h5 class="hplan">Advanced</h5>
+                <p class="pplan">$12/mo</p>
+                <p class="pfree" *ngIf="!monthly">2 months free</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-plans mt-2" (click)="Pro()">
+            <div class="plan" [class.plan-active]="pro">
+              <img src="../assets/images/icon-pro.svg" alt="icon Pro" class="icon">
+              <div class="plan-description">
+                <h5 class="hplan">Pro</h5>
+                <p class="pplan">$15/mo</p>
+                <p class="pfree" *ngIf="!monthly">2 months free</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-plans mt-2">
+            <div class="container-monthly-selector">
+              <p class="pmonthly" [class.pmonthly-desactive]="!monthly">Monthly</p>
+              <div class="switch-container">
+                <div class="switch-ball" [class.switch-ball-desactive]="!monthly" (click)="ChangePlanMonthly()"></div>
+                <div class="switch-ball" [class.switch-ball-desactive]="monthly" (click)="ChangePlanYearly()"></div>
+              </div>
+              <p class="pmonthly" [class.pmonthly-desactive]="monthly">Yearly</p>
+            </div>
+          </div>
+          
          
+        </div>
+        <div class="container-buttons2">
+          <p class="goback" (click)="goBackStep1()">Go Back</p>
+          <div class="button-next2"><p class="pnext" (click)="goStep3()">Next Step</p></div>
+        </div>
+      </div>
+
+
+      <div class="step2" *ngIf="step === 3">
+        <div class="form">
+          <h1 class="step-title">Pick Add-ons</h1>
+          <p class="pstep-title">Add-ons help enhance your gaming experience</p>
+           
+        </div>
+        <div class="container-buttons2">
+          <p class="goback" (click)="goBackStep2()">Go Back</p>
+          <div class="button-next2"><p class="pnext" (click)="goStep4()">Next Step</p></div>
+        </div>
+      </div>
+
+
+
+      <div class="step2" *ngIf="step === 4">
+        <div class="form">
+          <h1 class="step-title">Finishing up</h1>
+          <p class="pstep-title">Double-check everything looks OK before confirming</p>
+                
+        </div>
+        <div class="container-buttons2">
+          <p class="goback" (click)="goBackStep3()">Go Back</p>
+          <div class="button-next2"><p class="pnext" (click)="ConfirmAll()">Confirm</p></div>
         </div>
       </div>
       

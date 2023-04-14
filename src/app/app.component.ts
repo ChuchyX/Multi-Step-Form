@@ -10,7 +10,12 @@ export class AppComponent {
   title = 'msform';
 
   form: FormGroup;
-  step = 1;
+  step = 2;
+  monthly = true;
+
+  arcade = false;
+  advanced = false;
+  pro = false;
 
   userData = {
     name: '',
@@ -31,6 +36,34 @@ export class AppComponent {
   {
     this.step = 2;
     console.log(this.form.value);
+  }
+
+  ChangePlanYearly()
+  {
+    this.monthly = false;
+  }
+  ChangePlanMonthly()
+  {
+    this.monthly = true;
+  }
+
+  Arcade()
+  {
+    this.arcade = true;
+    this.advanced = false;
+    this.pro = false;
+  }
+  Advanced()
+  {
+    this.arcade = false;
+    this.advanced = true;
+    this.pro = false;
+  }
+  Pro()
+  {
+    this.arcade = false;
+    this.advanced = false;
+    this.pro = true;
   }
 
   goStep2()

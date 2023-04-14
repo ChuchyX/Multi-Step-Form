@@ -67,6 +67,106 @@ body
         position: relative;
         top: -25px;
     }
+    .container-plans{
+        width: 100%;
+    }
+    .plan{
+        width: 100%;
+        height: 90px;
+        display: flex;
+        gap: 20px;
+        border: 1px solid var(--LightGray);
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .plan:hover{
+        cursor: pointer;
+    }
+    .plan-active
+    {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        border: 1px solid var(--MarineBlue);
+        border-radius: 10px;
+        background-color: var(--LightGray);
+    }
+    .icon{
+        width: 60px;
+        height: 60px;
+    }
+    .pplan{
+        color: var(--CoolGray);
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: -10px;
+    }
+    .hplan{
+        color: var(--MarineBlue);
+        font-weight: 700;
+    }
+    .pfree{
+        margin-top: -20px;
+    }
+    .container-monthly-selector{
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        height: 40px;
+        background-color: var(--Magnolia);
+        padding-top: 7px;
+    }
+    .pmonthly{
+        color: var(--MarineBlue);
+        font-weight: 700;
+    }
+    .pmonthly-desactive{
+        color: var(--CoolGray);
+        font-weight: 700;
+    }
+    .switch-container{
+        width: 40px;
+        height: 20px;
+        background-color: var(--MarineBlue);
+        position: relative;
+        top: 3px;
+        border-radius: 50px;
+        display: flex;
+        padding: 2px;
+        gap: 5px;
+    }
+    .switch-ball{
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .switch-ball:hover{
+        cursor: pointer;
+    }
+    .switch-ball-desactive{
+        width: 15px;
+        height: 15px;
+        background-color: var(--MarineBlue);
+        border-radius: 50%;
+    }
+    .button-next2{
+        width: 120px;
+        height: 50px;
+        background-color: var(--MarineBlue);
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        position: relative;
+        bottom: 10px;
+    }
+    .container-buttons2{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 80px;
+    }
 }
 
 .step-info-container{
@@ -239,6 +339,10 @@ body
     }
     .button-next{
         top: 0px;
+    }
+    .container-buttons2{      
+       position: relative;
+       bottom: 120px;
     }
 }
 
