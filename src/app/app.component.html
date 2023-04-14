@@ -4,7 +4,7 @@
       <div class="balls-container">
 
         <div class="step">
-          <div class="ball ball-active"><p class="number number-active">1</p></div>
+          <div class="ball" [class.ball-active]="step === 1"><p class="number" [class.number-active]="step === 1">1</p></div>
           <div class="step-info-container">
             <p class="num-step">STEP 1</p>
             <p class="step-info">YOUR INFO</p>
@@ -12,7 +12,7 @@
         </div>
 
         <div class="step">
-          <div class="ball"><p class="number">2</p></div>
+          <div class="ball" [class.ball-active]="step === 2"><p class="number" [class.number-active]="step === 2">2</p></div>
           <div class="step-info-container">
             <p class="num-step">STEP 2</p>
             <p class="step-info">SELECT PLAN</p>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="step">
-          <div class="ball"><p class="number">3</p></div>
+          <div class="ball" [class.ball-active]="step === 3"><p class="number" [class.number-active]="step === 3">3</p></div>
           <div class="step-info-container">
             <p class="num-step">STEP 3</p>
             <p class="step-info">ADD-ONS</p>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="step">
-          <div class="ball"><p class="number">4</p></div>
+          <div class="ball" [class.ball-active]="step === 4"><p class="number" [class.number-active]="step === 4">4</p></div>
           <div class="step-info-container">
             <p class="num-step">STEP 4</p>
             <p class="step-info">SUMMARY</p>
@@ -38,8 +38,53 @@
       </div>
     </div>
     <div class="form-container">
-      <div class="form"><h1>Personal Info</h1></div>
-      <h1>Next Step</h1>
+
+      <div class="step1" *ngIf="step === 1">
+        <div class="form">
+          <h1 class="step-title">Personal Info</h1>
+          <p class="pstep-title">Please provide your name, email address, and phone number</p>
+
+          <form class="myform" [formGroup]="form" (ngSubmit)="submitForm()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" formControlName="name" id="name" placeholder="e.g. Stephen King">
+              <div *ngIf="!form.get('name')?.valid && (form.get('name')?.dirty || form.get('name')?.touched)">
+                <div *ngIf="form.get('name')?.errors" class="invalid">This field is required!</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" formControlName="email" id="email" placeholder="e.g. stephenking@lorem.com">
+              <div *ngIf="!form.get('email')?.valid && (form.get('email')?.dirty || form.get('email')?.touched)">
+                <div *ngIf="form.get('email')?.errors" class="invalid">You must enter a valid email!</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="number" class="form-control" formControlName="phone" id="phone" placeholder="e.g. +1 234 567 890">
+              <div *ngIf="!form.get('phone')?.valid && (form.get('phone')?.dirty || form.get('phone')?.touched)">
+                <div *ngIf="form.get('phone')?.errors" class="invalid">You must enter a valid phone number!</div>
+              </div>
+            </div>
+          
+            <div class="container-buttons firstcontainer">
+              <button class="button-next" type="submit" [disabled]="!form.valid"><p class="pnext">Next Step</p></button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+
+      <div class="step2" *ngIf="step === 2">
+        <div class="form">
+          <h1 class="step-title">Select Your Plan</h1>
+          <p class="pstep-title">You have the option of monthly or yearly billing</p>
+
+         
+        </div>
+      </div>
+      
     </div>
   </section>
 </main>
