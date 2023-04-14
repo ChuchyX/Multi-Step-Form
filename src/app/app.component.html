@@ -137,6 +137,42 @@
         <div class="form">
           <h1 class="step-title">Pick Add-ons</h1>
           <p class="pstep-title">Add-ons help enhance your gaming experience</p>
+
+          <div class="container-plans">
+            <div class="plan plan-addons" [class.plan-active]="checkedOnline">
+              <input type="checkbox" name="online" id="online" [(ngModel)]="checkedOnline">
+              <div class="plan-description2">
+                <h5 class="hplan">Online Service</h5>
+                <p class="pplan2">Access to multiplayer games</p>
+              </div>
+              <p class="pplan addon mt-3" *ngIf="monthly">+$1/mo</p>
+              <p class="pplan addon mt-3" *ngIf="!monthly">+$10/yr</p>
+            </div>
+          </div>
+
+          <div class="container-plans mt-2">
+            <div class="plan plan-addons" [class.plan-active]="checkedStorage">
+              <input type="checkbox" name="storage" id="storage" [(ngModel)]="checkedStorage">
+              <div class="plan-description2">
+                <h5 class="hplan">Larger Storage</h5>
+                <p class="pplan2">Extra 1 TB of cloud save</p>            
+              </div>
+              <p class="pplan addon mt-3" *ngIf="monthly">+$2/mo</p>
+              <p class="pplan addon mt-3" *ngIf="!monthly">+$20/yr</p>
+            </div>
+          </div>
+
+          <div class="container-plans mt-2">
+            <div class="plan plan-addons" [class.plan-active]="checkedProfile">
+              <input type="checkbox" name="profile" id="profile" [(ngModel)]="checkedProfile">
+              <div class="plan-description2">
+                <h5 class="hplan">Custom profile</h5>
+                <p class="pplan2">Custom theme on your profile</p>            
+              </div>
+              <p class="pplan addon mt-3" *ngIf="monthly">+$2/mo</p>
+              <p class="pplan addon mt-3" *ngIf="!monthly">+$20/yr</p>
+            </div>
+          </div>
            
         </div>
         <div class="container-buttons2">
@@ -151,6 +187,14 @@
         <div class="form">
           <h1 class="step-title">Finishing up</h1>
           <p class="pstep-title">Double-check everything looks OK before confirming</p>
+
+          <div class="container-confirm">
+            <div class="first-summary">
+              <div class="first-summary-left">
+                <h5 class="hplan">Arcade <span class="monthly-summary">(Monthly)</span></h5>
+              </div>
+            </div>
+          </div>
                 
         </div>
         <div class="container-buttons2">

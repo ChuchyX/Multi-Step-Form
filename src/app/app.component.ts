@@ -10,12 +10,16 @@ export class AppComponent {
   title = 'msform';
 
   form: FormGroup;
-  step = 2;
+  step = 4;
   monthly = true;
 
   arcade = false;
   advanced = false;
   pro = false;
+
+  checkedOnline = false;
+  checkedStorage = false;
+  checkedProfile = false;
 
   userData = {
     name: '',
@@ -72,6 +76,7 @@ export class AppComponent {
   }
   goStep3()
   {
+    if(!this.arcade && !this.advanced && !this.pro) return;
     this.step = 3;
   }
   goStep4()
